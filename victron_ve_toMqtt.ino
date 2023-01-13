@@ -116,6 +116,9 @@ String valueH21;
 String valueH22;
 String valueH23;
 
+String mqttUser = "mqttUser"; // Enter MQTT User
+String mqttPass = "mqttPass"; // Enter MQTT Password
+
 unsigned long previousMillisWatchdog = 0;
 long watchdogTime = 0;
 unsigned long previousMillis = 0;
