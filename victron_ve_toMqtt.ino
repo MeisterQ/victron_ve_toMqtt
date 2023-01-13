@@ -1,5 +1,5 @@
 // Created by MeisterQ 13.01.2023
-// V0.1
+// V00.01.01
 
 // Victron MPPT 150 / 35
 // Smart Solar charge controller
@@ -54,6 +54,7 @@
 #include <PubSubClient.h>           
 #include <SoftwareSerial.h>
 #include <credentials.h>
+#include <ArduinoJson.h>
 
 SoftwareSerial swSer(D6, D7);
 
@@ -68,17 +69,7 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 
 /* topics */
-#define ACT_VPV_TOPIC             "Solar/Victron/act/vpv"
-#define ACT_PID_TOPIC             "Solar/Victron/act/pid"
-#define ACT_V_TOPIC               "Solar/Victron/act/v"
-#define ACT_I_TOPIC               "Solar/Victron/act/i"
-#define ACT_PPV_TOPIC             "Solar/Victron/act/ppv"
-#define ACT_CS_TOPIC              "Solar/Victron/act/cs"
-#define ACT_H19_TOPIC             "Solar/Victron/act/h19"
-#define ACT_H20_TOPIC             "Solar/Victron/act/h20"
-#define ACT_H21_TOPIC             "Solar/Victron/act/h21"
-#define ACT_H22_TOPIC             "Solar/Victron/act/h22"
-#define ACT_H23_TOPIC             "Solar/Victron/act/h23"
+#define ACT_DATA_TOPIC            "Solar/Victron/act/data"
 #define STATE_DEBUG_TOPIC         "Solar/Victron/debug/debug"
 
 
@@ -110,18 +101,6 @@ int H20;
 int H21;
 int H22;
 int H23;
-
-char vpvMSG[10];
-char pidMSG[10];
-char vMSG[10];
-char iMSG[10];
-char ppvMSG[10];
-char csMSG[10];
-char h19MSG[10];
-char h20MSG[10];
-char h21MSG[10];
-char h22MSG[10];
-char h23MSG[10];
 
 String valueVPV;
 String valuePID;
