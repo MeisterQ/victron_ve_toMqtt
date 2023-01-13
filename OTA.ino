@@ -6,10 +6,10 @@ void OTAsettings()
   // ArduinoOTA.setPort(3232);
 
   // Hostname defaults to esp3232-[MAC]
-  ArduinoOTA.setHostname("ESP8266-Victron");
+  ArduinoOTA.setHostname("Victron");
 
   // No authentication by default
- // ArduinoOTA.setPassword("kek");
+ // ArduinoOTA.setPassword("123");
 
   // Password can be set with it's md5 value as well
   // MD5(admin) = 21232f297a57a5a743894a0e4a801fc3

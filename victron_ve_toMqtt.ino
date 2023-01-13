@@ -82,27 +82,28 @@ PubSubClient client(espClient);
 const char* ssid = wifiName;
 const char* password = wifiPass;
 
-IPAddress ip(192, 168, 10, 106);
-IPAddress gateway(192, 168, 10, 1);
-IPAddress subnet(255, 255, 255, 0);
-IPAddress dns(192, 168, 10, 1);
+IPAddress ip(192, 168, 1, 1);       // Change IP if you use fixed IP!!
+IPAddress gateway(192, 168, 1, 1);  // Change IP if you use fixed IP!!
+IPAddress subnet(192, 168, 1, 1);   // Change IP if you use fixed IP!!
+IPAddress dns(192, 168, 1, 1);      // Change IP if you use fixed IP!!
 
 /*
   ---------------------- Variables ----------------------
 */
 
-String data;
+byte cs;
+
 int vpv;
 int batteryV;
 int current;
 int ppv;
-byte cs;
 int H19;
 int H20;
 int H21;
 int H22;
 int H23;
 
+String data;
 String valueVPV;
 String valuePID;
 String valueV;
