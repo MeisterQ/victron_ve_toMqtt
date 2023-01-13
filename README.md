@@ -20,12 +20,6 @@ You also need to connect D6 (RX) and D7 (TX) to TX and RX (crosswise) and GND to
 
 VE.direct connector pinout is from left to right with opening on top.
 
----	---
-|	  |
-| 1 2 3 4 |
-|	  |
------------
-
 Victron 	ESP
 
 1. GND	--->	GND 
