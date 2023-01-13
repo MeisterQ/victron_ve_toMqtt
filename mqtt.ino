@@ -8,11 +8,6 @@ void mqttconnect()
     if (client.connect(clientId.c_str()))
     {
       Serial.println("connected");
-/*
-      client.subscribe(CTRL_SWITCH_TOPIC);
-      client.subscribe(CTRL_VOLTAGE_TOPIC);
-      client.subscribe(CTRL_CURRENT_TOPIC);
-      client.subscribe(CTRL_SYNC_MODE_TOPIC);*/
     }
   }
 }

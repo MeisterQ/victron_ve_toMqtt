@@ -50,8 +50,8 @@
 
 #include <ESP8266WiFi.h>
 #include <SoftwareSerial.h>
-#include <ArduinoOTA.h>             // OTA Library
-#include <PubSubClient.h>           // MQTT Library
+#include <ArduinoOTA.h>             
+#include <PubSubClient.h>           
 #include <SoftwareSerial.h>
 #include <credentials.h>
 
@@ -62,10 +62,10 @@ SoftwareSerial swSer(D6, D7);
   ------------------------ Mosquitto --------------------------
 */
 
-const char* mqtt_server = mqttServer;                        // MQTT Server IP
+const char* mqtt_server = mqttServer;
 
-WiFiClient espClient;                                             // WiFi client
-PubSubClient client(espClient);                                   // Client für MQTT
+WiFiClient espClient;
+PubSubClient client(espClient);
 
 /* topics */
 #define ACT_VPV_TOPIC             "Solar/Victron/act/vpv"
@@ -84,19 +84,19 @@ PubSubClient client(espClient);                                   // Client für
 
 
 /*
-  ---------------------- WLan Einstellungen ------------------
+  ---------------------- Wifi settings ------------------
 */
 
-const char* ssid = wifiName;                    // WLan Name
-const char* password = wifiPass;            // WLan Passwort
+const char* ssid = wifiName;
+const char* password = wifiPass;
 
-IPAddress ip(192, 168, 10, 106);                   // IP mit der sich der ESP in das Netzwerk verbinden soll
-IPAddress gateway(192, 168, 10, 1);                // Gateway des Netzwerks
-IPAddress subnet(255, 255, 255, 0);               // Subnetmask
+IPAddress ip(192, 168, 10, 106);
+IPAddress gateway(192, 168, 10, 1);
+IPAddress subnet(255, 255, 255, 0);
 IPAddress dns(192, 168, 10, 1);
 
 /*
-  ---------------------- Variablen ----------------------
+  ---------------------- Variables ----------------------
 */
 
 String data;
@@ -144,17 +144,17 @@ void setup()
   Serial.begin(115200);
   swSer.begin(19200);
   wifiSettings();
-  mqttSettings();                 // MQTT Konfigurieren
-  OTAsettings();                  // OTA Konfigurieren
-  mqttconnect();                  // MQTT-Verbindung aufbauen
+  mqttSettings();
+  OTAsettings();
+  mqttconnect();
 
-  client.publish(STATE_DEBUG_TOPIC, "Setup Done");    // Nachricht an MQTT-Server schicken
+  client.publish(STATE_DEBUG_TOPIC, "Setup Done");
 }
 
 void loop()
 {
-  ArduinoOTA.handle();            // OTA Handle
-  mqttHandle();                   // Sende Daten an MQTT Server
+  ArduinoOTA.handle();
+  mqttHandle();
   getData();
   sendMQTT();
 }
