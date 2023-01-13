@@ -14,4 +14,21 @@ Choose Wemos D1 mini (or any ESP8266 board) and compile and upload.
 
 It will now read serial data from Victron VE.direct Solar chargecontrollers and send it to the topics.
 
-You also need to connect D6 (RX) and D7 (TX) to TX and RX (crosswise) and GND to GND. 
+You also need to connect D6 (RX) and D7 (TX) to TX and RX (crosswise) and GND to GND.
+
+-------------------------------------------
+
+VE.direct connector pinout is from left to right with opening on top.
+
+---	---
+|	  |
+| 1 2 3 4 |
+|	  |
+-----------
+
+Victron 	ESP
+
+1. GND	--->	GND 
+2. RX	--->	D7
+3. TX	--->	D6
+4. V+	--->	Only connect with a DCDC Converter to 5V
