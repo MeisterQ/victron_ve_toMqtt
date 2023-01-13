@@ -50,8 +50,8 @@
 
 #include <ESP8266WiFi.h>
 #include <SoftwareSerial.h>
-#include <ArduinoOTA.h>             
-#include <PubSubClient.h>           
+#include <ArduinoOTA.h>
+#include <PubSubClient.h>
 #include <SoftwareSerial.h>
 #include <credentials.h>
 #include <ArduinoJson.h>
@@ -71,6 +71,7 @@ PubSubClient client(espClient);
 /* topics */
 #define ACT_DATA_TOPIC            "Solar/Victron/act/data"
 #define STATE_DEBUG_TOPIC         "Solar/Victron/debug/debug"
+#define STATE_WATCHDOG_TOPIC      "Solar/Victron/state/watchdog"
 
 
 
@@ -114,7 +115,8 @@ String valueH21;
 String valueH22;
 String valueH23;
 
-
+unsigned long previousMillisWatchdog = 0;
+long watchdogTime = 0;
 unsigned long previousMillis = 0;
 const long interval = 5000;
 
@@ -136,4 +138,5 @@ void loop()
   mqttHandle();
   getData();
   sendMQTT();
+  watchdog(5000);
 }
