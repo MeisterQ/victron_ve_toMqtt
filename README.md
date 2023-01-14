@@ -6,6 +6,7 @@ Copy all files into one folder and open victron_ve_toMqtt.ino. If you get asked 
 
 Arduino IDE will open and show all files in Tabs.
 
+Comment line "#include <credentials.h>", otherwise you will get compiling errors
 
 ----------------------------------------------
 

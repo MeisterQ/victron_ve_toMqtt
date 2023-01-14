@@ -53,7 +53,7 @@
 #include <ArduinoOTA.h>
 #include <PubSubClient.h>
 #include <SoftwareSerial.h>
-#include <credentials.h>
+//#include <credentials.h>
 #include <ArduinoJson.h>
 
 SoftwareSerial swSer(D6, D7);
