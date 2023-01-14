@@ -63,6 +63,8 @@ SoftwareSerial swSer(D6, D7);
   ------------------------ Mosquitto --------------------------
 */
 
+//#define mqttSecure
+
 const char* mqtt_server = mqttServer;
 
 WiFiClient espClient;
@@ -73,19 +75,27 @@ PubSubClient client(espClient);
 #define STATE_DEBUG_TOPIC         "Solar/Victron/debug/debug"
 #define STATE_WATCHDOG_TOPIC      "Solar/Victron/state/watchdog"
 
+#define MQTTPort 1883
+#define ClientID "Victron"
+#define MQTTUser "User"
+#define MQTTPass "Password"
 
 
 /*
   ---------------------- Wifi settings ------------------
 */
 
+//#define fixedIP // Uncomment to use fixed IP
+
 const char* ssid = wifiName;
 const char* password = wifiPass;
 
+#ifdef fixedIP
 IPAddress ip(192, 168, 1, 1);       // Change IP if you use fixed IP!!
 IPAddress gateway(192, 168, 1, 1);  // Change IP if you use fixed IP!!
 IPAddress subnet(192, 168, 1, 1);   // Change IP if you use fixed IP!!
 IPAddress dns(192, 168, 1, 1);      // Change IP if you use fixed IP!!
+#endif
 
 /*
   ---------------------- Variables ----------------------
