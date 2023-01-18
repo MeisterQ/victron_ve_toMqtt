@@ -24,6 +24,8 @@ void json()
   JSONencoder["H21"] = H21;
   JSONencoder["H22"] = H22;
   JSONencoder["H23"] = H23;
+  JSONEncoder["ERR"] = ERR;
+  JSONEncoder["RELAY"] = RELAY;
 
 
   char JSONmessageBuffer[350];

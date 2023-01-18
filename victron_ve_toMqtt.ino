@@ -112,6 +112,8 @@ int H20;
 int H21;
 int H22;
 int H23;
+int ERR;
+int RELAY;
 
 String data;
 String valueVPV;
@@ -125,6 +127,8 @@ String valueH20;
 String valueH21;
 String valueH22;
 String valueH23;
+String valueERR;
+String valueRELAY;
 
 String mqttUser = "mqttUser"; // Enter MQTT User
 String mqttPass = "mqttPass"; // Enter MQTT Password

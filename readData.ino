@@ -112,6 +112,25 @@ void getData()
       Serial.print("Maximum Power yesterday: ");
       Serial.println(H23);
     }
+    // Error
+    else if (data.startsWith("ERR"))
+    {
+      valueERR = data.substring(4);
+      valueERR.trim();
+      ERR = valueERR.toInt();
+      Serial.print("Error-State: ");
+      Serial.println(ERR);
+    }
+    // RELAY
+    else if (data.startsWith("RELAY"))
+    {
+      valueRELAY = data.substring(6);
+      valueRELAY.trim();
+      RELAY = valueRELAY.toInt();
+      Serial.print("Relay-State: ");
+      Serial.println(RELAY);
+    }
+
     yield();
   }
 }
